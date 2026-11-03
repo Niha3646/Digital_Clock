@@ -1,0 +1,713 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    background-image: url("https://media.istockphoto.com/id/1605204204/vector/blue-clock-image-texture-background.jpg?s=612x612&w=0&k=20&c=h2AjWhJFJry8uUKt3mcXrMN78hd-bJ4eU68_0Xw3pb8=");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+
+    background-color: #050816;
+
+    color: white;
+
+    font-family: 'Orbitron', sans-serif;
+
+    min-height: 100vh;
+
+    padding: 30px 5%;
+
+    transition: 0.5s;
+}
+
+#clock {
+    position: absolute;
+
+    top: 30px;
+    left: 5%;
+
+    font-size: 28px;
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    color: white;
+
+    transition: 0.5s;
+}
+
+#clock i {
+    font-size: 32px;
+    margin-right: 12px;
+}
+
+#discrp {
+    position: absolute;
+
+    top: 68px;
+    left: calc(5% + 45px);
+
+    color: #aeb8d0;
+
+    font-size: 14px;
+
+    transition: 0.5s;
+}
+
+#light {
+    position: absolute;
+
+    top: 30px;
+    right: 5%;
+
+    display: flex;
+
+    gap: 5px;
+
+    padding: 5px;
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    border-radius: 30px;
+
+    background: rgba(155, 169, 221, 0.5);
+
+    backdrop-filter: blur(10px);
+}
+
+#lightbtn,
+#darkbtn {
+    border: none;
+    outline: none;
+
+    padding: 12px 22px;
+
+    border-radius: 25px;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+#lightbtn {
+    background: rgba(255, 255, 255, 0.9);
+
+    color: #222;
+}
+
+#darkbtn {
+    background: rgba(40, 50, 80, 0.9);
+
+    color: white;
+}
+
+#lightbtn:hover,
+#darkbtn:hover {
+    transform: scale(1.05);
+}
+
+#clockcontainer {
+    text-align: center;
+
+    margin-top: 110px;
+
+    transition: 0.5s;
+}
+
+#clockcontainer p:first-child {
+    color: #a0aac5;
+
+    font-size: 13px;
+
+    letter-spacing: 7px;
+
+    margin-bottom: 15px;
+}
+
+#clockcontainer h1 {
+    font-size: 60px;
+
+    margin-bottom: 12px;
+    background: linear-gradient(
+        90deg,
+        white,
+        white,
+        #c050ff,
+        #6975ff
+    );
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+#clockcontainer p:last-child {
+    color: #aeb5ce;
+
+    font-size: 17px;
+}
+
+#time {
+    width: 70%;
+
+    max-width: 850px;
+
+    margin: 40px auto 0;
+
+    padding: 40px;
+
+    text-align: center;
+
+    border-radius: 35px;
+
+    background: rgba(10, 20, 55, 0.65);
+
+    border: 1px solid rgba(140, 110, 255, 0.6);
+
+    box-shadow:
+        0 15px 50px rgba(0, 0, 0, 0.4),
+        inset 0 0 30px rgba(100, 80, 200, 0.1);
+
+    backdrop-filter: blur(15px);
+
+    transition: 0.5s;
+}
+
+#timedisplay {
+    font-size: 90px;
+
+    letter-spacing: 8px;
+
+    font-weight: bold;
+
+    background: linear-gradient(
+        90deg,
+        white 0%,
+        white 55%,
+        #8064ff 100%
+    );
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+    margin-bottom: 10px;
+
+    transition: 0.5s;
+}
+
+#hours,
+#minutes,
+#seconds {
+    display: inline-block;
+
+    width: 30%;
+
+    color: #a5aec8;
+
+    font-size: 11px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 5px;
+
+    transition: 0.5s;
+}
+
+#date {
+    margin-top: 35px;
+
+    color: #e5e8f2;
+
+    font-size: 17px;
+
+    transition: 0.5s;
+}
+
+#day {
+    display: inline-block;
+
+    width: 30%;
+
+    margin-top: 30px;
+
+    margin-left: 19%;
+
+    padding: 25px;
+
+    border-radius: 22px;
+
+    background: rgba(20, 30, 70, 0.55);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    backdrop-filter: blur(12px);
+
+    transition: 0.5s;
+}
+
+#daydisplay {
+    color: #e8eaf3;
+
+    font-size: 16px;
+
+    transition: 0.5s;
+}
+
+#day i {
+    color: #ffb52e;
+
+    font-size: 28px;
+
+    margin-right: 15px;
+}
+
+#day:hover {
+    transform: translateY(-5px);
+
+    background: rgba(40, 50, 100, 0.65);
+}
+
+#month {
+    display: inline-block;
+
+    width: 30%;
+
+    margin-top: 30px;
+
+    margin-left: 15px;
+
+    padding: 25px;
+
+    border-radius: 22px;
+
+    background: rgba(20, 30, 70, 0.55);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    backdrop-filter: blur(12px);
+
+    transition: 0.5s;
+}
+
+#monthdisplay {
+    color: #e8eaf3;
+
+    font-size: 16px;
+
+    transition: 0.5s;
+}
+
+#month i {
+    color: #20e5a2;
+
+    font-size: 28px;
+
+    margin-right: 15px;
+}
+
+#month:hover {
+    transform: translateY(-5px);
+
+    background: rgba(40, 50, 100, 0.65);
+}
+
+#foot {
+    margin-top: 45px;
+
+    text-align: center;
+
+    color: #a3abc2;
+
+    transition: 0.5s;
+}
+
+#foot p:first-child {
+    font-size: 16px;
+
+    font-style: italic;
+
+    margin-bottom: 10px;
+}
+
+#foot p:last-child {
+    font-size: 14px;
+}
+
+
+/* ==================================================
+   LIGHT MODE
+   ================================================== */
+
+body.light {
+    background-image:
+        linear-gradient(
+            rgba(158, 192, 226, 0.78),
+            rgba(162, 189, 217, 0.78)
+        ),
+        url("https://media.istockphoto.com/id/1605204204/vector/blue-clock-image-texture-background.jpg?s=612x612&w=0&k=20&c=h2AjWhJFJry8uUKt3mcXrMN78hd-bJ4eU68_0Xw3pb8=");
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+
+    color: #172033;
+}
+
+
+/* Header */
+
+body.light #clock {
+    color: #172033;
+}
+
+body.light #clock i {
+    color: #2563eb;
+}
+
+body.light #discrp {
+    color: #64748b;
+}
+
+
+/* Buttons */
+
+body.light #light {
+    background: rgba(255, 255, 255, 0.8);
+
+    border: 1px solid #cbd5e1;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+body.light #lightbtn {
+    background: #2563eb;
+
+    color: white;
+}
+
+body.light #darkbtn {
+    background: #e2e8f0;
+
+    color: #334155;
+}
+
+
+/* Main heading */
+
+body.light #clockcontainer p:first-child {
+    color: #64748b;
+}
+
+body.light #clockcontainer h1 {
+    background: linear-gradient(
+        90deg,
+        #172033,
+        #2563eb
+    );
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+body.light #clockcontainer p:last-child {
+    color: #0d0e11;
+}
+
+
+/* Time box */
+
+body.light #time {
+    background: rgba(179, 189, 228, 0.9);
+
+    border: 1px solid #cbd5e1;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.12),
+        inset 0 0 20px rgba(255, 255, 255, 0.8);
+}
+
+
+/* Digital time */
+
+body.light #timedisplay {
+    background: linear-gradient(
+        90deg,
+        #172033,
+        #2563eb
+    );
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* Hours / minutes / seconds */
+
+body.light #hours,
+body.light #minutes,
+body.light #seconds {
+    color: #64748b;
+}
+
+
+/* Date */
+
+body.light #date {
+    color: #334155;
+}
+
+
+/* Day */
+
+body.light #day {
+    background: rgba(255, 255, 255, 0.9);
+
+    border: 1px solid #cbd5e1;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+body.light #daydisplay {
+    color: #334155;
+}
+
+body.light #day:hover {
+    background: white;
+}
+
+
+/* Month */
+
+body.light #month {
+    background: rgba(255, 255, 255, 0.9);
+
+    border: 1px solid #cbd5e1;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+body.light #monthdisplay {
+    color: #334155;
+}
+
+body.light #month:hover {
+    background: white;
+}
+
+
+/* Footer */
+
+body.light #foot {
+    color: #64748b;
+}
+
+
+/* ==================================================
+   DARK MODE
+   ================================================== */
+
+body.dark {
+
+    background-image: url("https://media.istockphoto.com/id/1605204204/vector/blue-clock-image-texture-background.jpg?s=612x612&w=0&k=20&c=h2AjWhJFJry8uUKt3mcXrMN78hd-bJ4eU68_0Xw3pb8=");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-attachment: fixed;
+
+    background-color: #050816;
+
+    color: white;
+}
+
+
+/* Header */
+
+body.dark #clock {
+    color: white;
+}
+
+body.dark #discrp {
+    color: #aeb8d0;
+}
+
+
+/* Main heading */
+
+body.dark #clockcontainer p:first-child {
+    color: #a0aac5;
+}
+
+body.dark #clockcontainer p:last-child {
+    color: #aeb5ce;
+}
+
+
+/* Time */
+
+body.dark #time {
+    background: rgba(10, 20, 55, 0.65);
+
+    border: 1px solid rgba(140, 110, 255, 0.6);
+}
+
+body.dark #hours,
+body.dark #minutes,
+body.dark #seconds {
+    color: #a5aec8;
+}
+
+body.dark #date {
+    color: #e5e8f2;
+}
+
+
+/* Day */
+
+body.dark #day {
+    background: rgba(20, 30, 70, 0.55);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+body.dark #daydisplay {
+    color: #e8eaf3;
+}
+
+
+/* Month */
+
+body.dark #month {
+    background: rgba(20, 30, 70, 0.55);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+body.dark #monthdisplay {
+    color: #e8eaf3;
+}
+
+
+/* Footer */
+
+body.dark #foot {
+    color: #a3abc2;
+}
+
+
+/* ==================================================
+   MOBILE
+   ================================================== */
+
+@media (max-width: 700px) {
+
+    body {
+        padding: 20px;
+    }
+
+    #clock {
+        position: relative;
+
+        top: auto;
+        left: auto;
+
+        text-align: center;
+
+        font-size: 24px;
+    }
+
+    #discrp {
+        position: relative;
+
+        top: auto;
+        left: auto;
+
+        text-align: center;
+
+        margin-top: 5px;
+    }
+
+    #light {
+        position: relative;
+
+        top: auto;
+        right: auto;
+
+        width: fit-content;
+
+        margin: 20px auto;
+    }
+
+    #clockcontainer {
+        margin-top: 50px;
+    }
+
+    #clockcontainer h1 {
+        font-size: 40px;
+    }
+
+    #time {
+        width: 100%;
+
+        padding: 25px 10px;
+    }
+
+    #timedisplay {
+        font-size: 42px;
+
+        letter-spacing: 3px;
+    }
+
+    #hours,
+    #minutes,
+    #seconds {
+        width: 30%;
+
+        letter-spacing: 2px;
+    }
+
+    #day {
+        width: 48%;
+
+        margin-left: 0;
+
+        text-align: center;
+    }
+
+    #month {
+        width: 48%;
+
+        margin-left: 1%;
+    }
+
+    #day i,
+    #month i {
+        font-size: 20px;
+
+        margin-right: 5px;
+    }
+
+    #foot {
+        margin-top: 30px;
+    }
+}
